@@ -1,0 +1,24 @@
+{
+  "name": "神戶四日浪漫之旅",
+  "short_name": "神戶旅行",
+  "description": "精心規劃的神戶四日浪漫獨旅 (2025/12/19-22)",
+  "start_url": "/travel-plan/",
+  "display": "standalone",
+  "background_color": "#f9f8f6",
+  "theme_color": "#a9927d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
