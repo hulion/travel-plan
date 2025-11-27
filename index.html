@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神戶四日浪漫之旅 (12/19-22)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="pb-32 bg-[#f9f8f6]">
+
+    <!-- Hero Image -->
+    <div class="header-img-container w-full">
+        <img src="https://i.meee.com.tw/EheQS0C.png"
+             class="header-img"
+             alt="神戶浪漫之旅首圖"
+             onerror="this.src='https://images.unsplash.com/photo-1572885873503-48418707fa3f?w=1200&q=80'">
+        <div class="header-overlay"></div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="mx-auto px-4 relative z-10">
+
+        <!-- Header Content with Weather -->
+        <div class="bg-[#f9f8f6]/95 backdrop-blur-md p-6 shadow-lg border border-[#e6e0d4] rounded-3xl text-center transform -translate-y-12">
+            <h1 class="text-2xl font-bold text-[#5d5246] tracking-tight mb-3">神戶四日浪漫獨旅 🇯🇵</h1>
+            <div class="flex items-center justify-center gap-3 text-[#9c8c74] text-xs font-bold uppercase tracking-wide mb-3">
+                <span class="bg-[#f0ebe0] px-2 py-1 rounded">12/19 - 12/22</span>
+                <span class="text-[#d4c5b0]">•</span>
+                <span class="bg-[#f0ebe0] px-2 py-1 rounded">remm Plus</span>
+            </div>
+            <!-- Integrated Weather -->
+            <div class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-400 to-blue-500 text-white px-4 py-2 rounded-full text-sm shadow-md">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-calendar-day text-xs"></i>
+                    <span id="weather-date" class="text-xs font-medium">--/--</span>
+                </div>
+                <div class="w-px h-4 bg-white/30"></div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span id="weather-temp" class="font-bold">--°C</span>
+                </div>
+                <div class="w-px h-4 bg-white/30"></div>
+                <div class="flex items-center gap-1 text-xs">
+                    <i class="fas fa-umbrella"></i>
+                    <span id="rain-chance">--%</span>
+                </div>
+                <div class="w-px h-4 bg-white/30"></div>
+                <span id="weather-desc" class="text-xs">載入中</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div>
+
+            <!-- Hotel & Flight Container -->
+            <div class="hotel-flight-container">
+
+            <!-- Hotel Info (Collapsible) -->
+            <div class="card collapsible-card">
+                <div class="collapsible-header" onclick="toggleCollapsible('hotel')">
+                    <div class="flex items-center gap-3">
+                        <span class="tag tag-hotel">住宿</span>
+                        <h2 class="text-lg font-bold text-[#5d5246]">remm Plus Kobe Sannomiya</h2>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon" id="hotel-icon"></i>
+                </div>
+                <div class="collapsible-content" id="hotel-content">
+                    <div class="img-container">
+                        <img src="https://i.meee.com.tw/ko0muG0.png" class="food-img" alt="remm Plus">
+                        <div class="illustration-caption">✨ remm Plus 高樓層夜景</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="font-bold text-lg text-[#5d5246] mb-2">雷姆普拉斯神戶三宮</h3>
+                        <p class="text-[#8d7b68] text-sm mb-4 leading-relaxed">直通阪急三宮站，房內配有按摩椅,絕佳的高空夜景體驗。</p>
+
+                        <!-- 預訂詳情 -->
+                        <div class="bg-[#fff8f0] border border-[#f2eadd] rounded-2xl p-4 mb-4">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fas fa-hotel text-[#b48b60]"></i>
+                                <span class="font-bold text-[#5d5246] text-sm">預訂資訊</span>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-receipt text-[#b48b60] text-xs mt-1"></i>
+                                    <span class="text-[#5d5246] font-mono font-bold">1667417167</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-calendar-check text-[#b48b60] text-xs mt-1"></i>
+                                    <div class="flex-1">
+                                        <div class="text-[#5d5246]"><strong>入住：</strong>2025/12/19 (五) 14:00</div>
+                                        <div class="text-[#5d5246]"><strong>退房：</strong>2025/12/22 (一) 12:00</div>
+                                        <div class="text-[#9c8c74] text-xs mt-1">共 3 晚</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-bed text-[#b48b60] text-xs mt-1"></i>
+                                    <div class="flex-1">
+                                        <div class="text-[#5d5246] font-medium">雙人房 - 禁煙</div>
+                                        <div class="text-[#9c8c74] text-xs">城景 | 18㎡ | 1 張大床</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-yen-sign text-[#b48b60] text-xs mt-1"></i>
+                                    <span class="text-[#5d5246] font-bold">¥62,618</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-gift text-[#b48b60] text-xs mt-1"></i>
+                                    <span class="text-[#5d5246]">飲用水、免費 Wi-Fi</span>
+                                </div>
+                                <div class="pt-2 border-t border-[#f2eadd]">
+                                    <div class="text-xs text-[#9c8c74] mb-1"><strong>取消政策：</strong></div>
+                                    <div class="text-xs text-green-600">✓ 12/17 前免費取消</div>
+                                    <div class="text-xs text-orange-500">⚠ 12/18 起退 80%</div>
+                                    <div class="text-xs text-red-500">✗ 12/19 起不可退款</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=remm+Plus+Kobe+Sannomiya" target="_blank" class="btn-map">
+                            <i class="fas fa-map-marker-alt text-[#a9927d]"></i> 開啟 Google Map
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flight Ticket Style Info (Collapsible) -->
+            <div class="ticket-container collapsible-card">
+                <!-- Ticket Header with EVA Logo (Clickable) -->
+                <div class="ticket-header flex items-center justify-between" onclick="toggleCollapsible('flight')" style="cursor: pointer; padding: 0;">
+                    <div class="bg-white px-6 py-4 flex items-center" style="clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);">
+                        <img src="https://www.evaair.com/system/assets/images/logo-evaair-header.png" alt="EVA Air" class="h-8">
+                    </div>
+                    <div class="flex items-center gap-3 px-6">
+                        <span class="text-xs font-bold tracking-widest opacity-90">TPE ⇄ UKB</span>
+                        <i class="fas fa-chevron-down toggle-icon text-white" id="flight-icon"></i>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="flight-content">
+                <div class="ticket-body">
+                    <!-- Outbound Ticket -->
+                    <div class="route-row">
+                        <div>
+                            <div class="airport-code">TPE</div>
+                            <div class="airport-name">Taipei</div>
+                        </div>
+                        <div class="flight-icon-box">
+                            <div class="flight-arrow"></div> <!-- 虛線箭頭 -->
+                            <i class="fas fa-plane flight-icon"></i> <!-- 飛機向右 -->
+                            <div class="flight-date">12/19</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="airport-code">UKB</div>
+                            <div class="airport-name">Kobe</div>
+                        </div>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item"><label>FLIGHT</label><span>BR134</span></div>
+                        <div class="info-item"><label>DEPARTS</label><span>06:30</span></div>
+                        <div class="info-item"><label>ARRIVES</label><span>10:00</span></div>
+                        <div class="info-item"><label>CLASS</label><span>ECO</span></div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="ticket-divider"></div>
+
+                    <!-- Inbound Ticket -->
+                    <div class="route-row">
+                        <div>
+                            <div class="airport-code">UKB</div>
+                            <div class="airport-name">Kobe</div>
+                        </div>
+                        <div class="flight-icon-box">
+                            <div class="flight-arrow"></div> <!-- 虛線箭頭 -->
+                            <i class="fas fa-plane flight-icon"></i> <!-- 飛機統一向右 -->
+                            <div class="flight-date">12/22</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="airport-code">TPE</div>
+                            <div class="airport-name">Taipei</div>
+                        </div>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item"><label>FLIGHT</label><span>BR133</span></div>
+                        <div class="info-item"><label>DEPARTS</label><span>11:00</span></div>
+                        <div class="info-item"><label>ARRIVES</label><span>13:15</span></div>
+                        <div class="info-item"><label>CLASS</label><span>ECO</span></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+            <!-- End Hotel & Flight Container -->
+
+            <!-- Day Navigation Tabs -->
+            <div class="day-nav-container">
+                <div class="max-w-md mx-auto px-4">
+                    <div class="flex gap-2 justify-center">
+                        <button onclick="scrollToDay('day1')" class="day-tab-btn">
+                        <span class="font-bold">D1</span>
+                        <span class="text-xs opacity-80">12/19</span>
+                        <div class="flex items-center gap-1 text-xs mt-1">
+                            <i class="fas fa-sun text-orange-400"></i>
+                            <span>11°C</span>
+                        </div>
+                    </button>
+                    <button onclick="scrollToDay('day2')" class="day-tab-btn">
+                        <span class="font-bold">D2</span>
+                        <span class="text-xs opacity-80">12/20</span>
+                        <div class="flex items-center gap-1 text-xs mt-1">
+                            <i class="fas fa-cloud-sun text-yellow-500"></i>
+                            <span>10°C</span>
+                        </div>
+                    </button>
+                    <button onclick="scrollToDay('day3')" class="day-tab-btn">
+                        <span class="font-bold">D3</span>
+                        <span class="text-xs opacity-80">12/21</span>
+                        <div class="flex items-center gap-1 text-xs mt-1">
+                            <i class="fas fa-sun text-orange-500"></i>
+                            <span>13°C</span>
+                        </div>
+                    </button>
+                    <button onclick="scrollToDay('day4')" class="day-tab-btn">
+                        <span class="font-bold">D4</span>
+                        <span class="text-xs opacity-80">12/22</span>
+                        <div class="flex items-center gap-1 text-xs mt-1">
+                            <i class="fas fa-cloud text-gray-500"></i>
+                            <span>9°C</span>
+                        </div>
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 1 -->
+            <div id="day1" class="section-title">
+                <div class="flex items-center gap-3">
+                    <span class="bg-[#a9927d] text-white w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold shadow-md rotate-3">D1</span>
+                    <span>12/19 (四) 異國風情</span>
+                </div>
+                <div class="weather-tag">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-sun text-orange-400"></i>
+                        <span>11°C</span>
+                    </div>
+                    <div class="text-xs text-blue-400 flex items-center gap-1">
+                        <i class="fas fa-umbrella"></i> 10%
+                    </div>
+                </div>
+            </div>
+
+            <!-- D1 Arrival (Redesigned Style) -->
+            <div class="card border border-[#e6e0d4] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-start mb-4">
+                        <div class="w-14 h-14 rounded-full border-2 border-[#f0ebe0] flex items-center justify-center text-[#8b7e66] text-xl bg-white shrink-0 shadow-sm">
+                            <i class="fas fa-subway"></i>
+                        </div>
+                        <div class="ml-4 mt-1">
+                            <h3 class="text-xl font-bold text-[#5d5246] tracking-tight">10:00 機場移動</h3>
+                            <p class="text-[#9c8c74] text-sm mt-1 leading-relaxed">
+                                搭乘 Port Liner (18分) 直達三宮站。<br>
+                                先去飯店寄放行李。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden group cursor-pointer shadow-inner border border-[#f5f5f0]">
+                        <img src="https://image.pollinations.ai/prompt/cute%20illustrated%20map%20route%20from%20airport%20island%20crossing%20bridge%20to%20city%20center%2C%20kobe%20port%20liner%2C%20japanese%20kawaii%20style%2C%20pastel%20colors?width=800&height=300&nologo=true&seed=999"
+                             class="w-full h-36 object-cover opacity-90 group-hover:opacity-100 transition duration-500 group-hover:scale-105"
+                             alt="機場路線圖">
+                        <a href="https://www.google.com/maps/dir/?api=1&origin=Kobe+Airport&destination=remm+Plus+Kobe+Sannomiya&travelmode=transit"
+                           target="_blank"
+                           class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/95 text-[#5d5246] px-6 py-3 rounded-full text-sm font-bold shadow-lg hover:scale-105 active:scale-95 transition flex items-center gap-2 border border-[#e6e0d4]">
+                            <i class="fas fa-map-signs text-[#a9927d]"></i> 查看 Google Map 路線
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D1 Lunch -->
+            <div class="card border border-[#e6e0d4] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-center gap-3 mb-4 w-full flex-wrap">
+                        <div class="w-10 h-10 rounded-full bg-[#f0f5e8] flex items-center justify-center text-[#6b8c6b]"><i class="fas fa-utensils"></i></div>
+                        <h3 class="text-lg font-bold text-[#5d5246] flex-1 min-w-[140px]">午餐推薦</h3>
+                        <button onclick="pickRandom('d1-lunch')" class="random-pick-btn"><i class="fas fa-dice"></i> 交給命運之神</button>
+                    </div>
+                    <div id="d1-lunch">
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/ZHZ8bYB.png" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">Mori Mori 壽司 (もりもり寿し)</div>
+                                <p class="rec-desc">金澤人氣迴轉壽司，OPA2 百貨 9樓。推薦「三點盛合」。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/u7if5K8v2e8AmdJU7" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/fcv7ZtI.png" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">Green House Silva (グリーンハウス シルヴァ)</div>
+                                <p class="rec-desc">森林系咖啡廳，綠意環繞超療癒。義大利麵、蛋包飯套餐。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/SqyYCnPre1EVcSJy6" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/21Fwy11.png" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">神戶西村咖啡店 北野坂店</div>
+                                <p class="rec-desc">復古洋館，大正浪漫風情。焗烤吐司、三明治輕食。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/Rz5fAaEeqG6j2KXi7" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D1 Spot -->
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://i.meee.com.tw/uw9JdFF.png" class="food-img" alt="Kitano Starbucks">
+                    <div class="illustration-caption">☕️ 13:30 全日本最美星巴克</div>
+                </div>
+                <div class="card-content">
+                    <span class="tag tag-spot">必訪景點</span>
+                    <h3 class="font-bold text-lg text-[#5d5246]">北野異人館街 & 星巴克</h3>
+                    <p class="text-sm text-[#8d7b68] mb-4">漫步在優雅的坡道，參觀洋房。這間星巴克是註冊有形文化財，復古洋房超好拍。</p>
+                    <div class="flex gap-2">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kitano+Ijinkan" target="_blank" class="btn-map text-sm">異人館地圖</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Kobe+Kitano+Ijinkan" target="_blank" class="btn-map text-sm">星巴克導航</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D1 Dinner -->
+            <div class="card border border-[#e6e0d4] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-center gap-3 mb-4 w-full">
+                        <div class="w-10 h-10 rounded-full bg-[#f0ebe0] flex items-center justify-center text-[#8b7e66]"><i class="fas fa-moon"></i></div>
+                        <h3 class="text-lg font-bold text-[#5d5246]">晚餐推薦</h3>
+                        <button onclick="pickRandom('d1-dinner')" class="random-pick-btn"><i class="fas fa-dice"></i> 交給命運之神</button>
+                    </div>
+                    <div id="d1-dinner">
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/R2WbzqU.jpg" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">燒肉 神戶牛丸 (Kobe Gyumaru)</div>
+                                <p class="rec-desc">4.8⭐ 專注神戶牛，從星巴克沿北野坂往下 5-8 分鐘。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/F1UUe5akU8AMwHbD7" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/GGVIWKI.jpg" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">板前燒肉 一牛 (Ichigyu)</div>
+                                <p class="rec-desc">4.9⭐ 雌牛專門店，板前風格。軟嫩細緻，適合老饕。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/GCSz9TBCsHKn5d1k6" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/vwXM61N.jpg" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">神戶牛燒肉 八坐和 (Yazawa)</div>
+                                <p class="rec-desc">4.7⭐ 購買整頭神戶牛，稀有部位齊全。連鎖名店。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/qbC7SKLz9Eu3xy3L6" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div id="day2" class="section-title">
+                <div class="flex items-center gap-3">
+                    <span class="bg-[#a9927d] text-white w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold shadow-md rotate-3">D2</span>
+                    <span>12/20 (五) 文化與神戶牛</span>
+                </div>
+                <div class="weather-tag">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-cloud-sun text-yellow-500"></i>
+                        <span>10°C</span>
+                    </div>
+                    <div class="text-xs text-gray-400 flex items-center gap-1">
+                        <i class="fas fa-umbrella"></i> 0%
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://i.meee.com.tw/3FMSvFz.png" class="food-img" alt="Ikuta Shrine">
+                    <div class="illustration-caption">⛩️ 09:30 生田神社參拜</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="font-bold text-lg text-[#5d5246]">生田神社 (Ikuta Shrine)</h3>
+                    <p class="text-sm text-[#8d7b68] mb-4">在飯店附近，祈求緣分的能量景點，清晨散步非常舒服。</p>
+                    <a href="https://maps.app.goo.gl/buJHWmTbSg8HuGnu6?g_st=ipc" target="_blank" class="btn-map"><i class="fas fa-map-pin text-[#a9927d]"></i> 地圖導航</a>
+                </div>
+            </div>
+
+            <!-- D2 Lunch -->
+            <div class="card border-2 border-[#e6e0d4]">
+                <div class="img-container">
+                    <img src="https://i.meee.com.tw/PsEZ6oC.png" class="food-img" alt="Kobe Beef">
+                    <div class="illustration-caption text-[#fdf5e6] font-bold">★ 12:00 午餐首選：頂級神戶牛</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="font-bold text-xl text-[#5d5246]">神戶牛排 Ishida. 本店</h3>
+                    <p class="text-sm text-[#8d7b68] mt-1 mb-4">百年老店，絕對頂級的鐵板燒體驗。請務必提前預約。</p>
+                    <a href="https://maps.app.goo.gl/j7R73eZf2RhBnKjx9" target="_blank" class="btn-map btn-primary w-full justify-center"><i class="fas fa-utensils"></i> 餐廳導航</a>
+                    <div class="mt-4 pt-3 border-t border-[#f0ebe0] flex justify-between items-center">
+                        <span class="text-xs text-[#9c8c74]">訂不到位？備選：</span>
+                        <div class="flex gap-2">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Bifteck+Kawamura+Sannomiya" target="_blank" class="text-xs bg-[#f0ebe0] px-3 py-1 rounded-lg text-[#6b5b45] font-medium border border-[#e6e0d4]">Kawamura</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Mouriya+Honten+Kobe" target="_blank" class="text-xs bg-[#f0ebe0] px-3 py-1 rounded-lg text-[#6b5b45] font-medium border border-[#e6e0d4]">Mouriya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D2 Spot -->
+            <div class="card">
+                <div class="img-container carousel-container">
+                    <img src="https://i.meee.com.tw/BzqG7iP.png" class="food-img carousel-img" id="mosaic-img" alt="MOSAIC">
+                    <div class="illustration-caption">🎡 14:00 臨海樂園與港灣夜景</div>
+                    <!-- 輪播指示器 -->
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-index="0"></span>
+                        <span class="indicator" data-index="1"></span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="font-bold text-lg text-[#5d5246]">神戶臨海樂園和神戶港馬賽克廣場</h3>
+                    <p class="text-sm text-[#8d7b68] mb-4">這裡有最美的神戶塔夜景，非常適合兩人牽手散步。</p>
+                    <a href="https://maps.app.goo.gl/UxJmHprY24yzBV8M8" target="_blank" class="btn-map"><i class="fas fa-map-pin text-[#a9927d]"></i> 地圖導航</a>
+                </div>
+            </div>
+
+            <!-- D2 Dinner -->
+            <div class="card border border-[#e6e0d4] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-center gap-3 mb-4 w-full">
+                        <div class="w-10 h-10 rounded-full bg-[#f0ebe0] flex items-center justify-center text-[#8b7e66]"><i class="fas fa-moon"></i></div>
+                        <h3 class="text-lg font-bold text-[#5d5246]">晚餐推薦</h3>
+                        <button onclick="pickRandom('d2-dinner')" class="random-pick-btn"><i class="fas fa-dice"></i> 交給命運之神</button>
+                    </div>
+                    <div id="d2-dinner">
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/u1YTL2b.png" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">お好み焼 ふじ (Okonomiyaki Fuji)</div>
+                                <p class="rec-desc">走路可到的在地老店（Tabelog 百名店），必吃口感蓬鬆的大阪燒與特色烏龍麵燒，充滿昭和復古味。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/6LFQ13RHbyGP9wb48" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/PYi2LpB.png" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">HOP STAND 神戶馬賽克店</div>
+                                <p class="rec-desc">位於 Mosaic 1樓戶外露台。氣氛超Chill的啤酒餐廳，使用淡路雞製作的烤串配上神戶六甲啤酒，是欣賞夜景後的最佳放鬆點。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/h2gf27Dds58HR4C7A" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/3RdXGNL.png" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">一蘭拉麵 三宮</div>
+                                <p class="rec-desc">經典口味，快速美味。</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Ichiran+Ramen+Sannomiya" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div id="day3" class="section-title">
+                 <div class="flex items-center gap-3">
+                    <span class="bg-[#a9927d] text-white w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold shadow-md rotate-3">D3</span>
+                    <span>12/21 (六) 購物與米其林</span>
+                </div>
+                <div class="weather-tag">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-sun text-orange-500"></i>
+                        <span>13°C</span>
+                    </div>
+                    <div class="text-xs text-gray-400 flex items-center gap-1">
+                        <i class="fas fa-umbrella"></i> 0%
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <img src="https://i.meee.com.tw/EloBwUI.png" class="feature-img">
+                <div class="feature-content-box">
+                    <span class="feature-tag">太太最愛</span>
+                    <h3 class="feature-title">Blue Bottle Coffee - Kobe Cafe</h3>
+                    <p class="feature-desc">神戶 Bal 店，環境優雅。</p>
+                    <a href="https://maps.app.goo.gl/NygNhU1kmkwwUjWU7" target="_blank" class="feature-btn"><i class="fas fa-coffee"></i> 導航</a>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <img src="https://i.meee.com.tw/6kvYfVc.png" class="feature-img">
+                <div class="feature-content-box">
+                    <span class="feature-tag">Jellycat 尋寶</span>
+                    <h3 class="feature-title">神戶阪急百貨</h3>
+                    <p class="feature-desc">本館 5F "Ribbon hakka kids"</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kobe+Hankyu" target="_blank" class="feature-btn"><i class="fas fa-shopping-bag"></i> 前往尋寶</a>
+                </div>
+            </div>
+
+            <!-- D3 Lunch -->
+            <div class="card border border-[#e6e0d4] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-center gap-3 mb-4 w-full flex-wrap">
+                        <div class="w-10 h-10 rounded-full bg-[#f0f5e8] flex items-center justify-center text-[#6b8c6b]"><i class="fas fa-utensils"></i></div>
+                        <h3 class="text-lg font-bold text-[#5d5246] flex-1 min-w-[140px]">元町/南京町午餐</h3>
+                        <button onclick="pickRandom('motomachi-lunch')" class="random-pick-btn"><i class="fas fa-dice"></i> 交給命運之神</button>
+                    </div>
+                    <div id="motomachi-lunch">
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/mSBxVz5.png" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">民生廣東料理店 (Minsei)</div>
+                                <p class="rec-desc">Google 4.1高分，招牌花枝天婦羅。</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Minsei+Cantonese+Restaurant+Kobe" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/sfEvSAm.jpg" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">神戶牛拉麵 八坐和 (Yazawa)</div>
+                                <p class="rec-desc">神戶牛骨湯頭，神戶牛叉燒。拉麵與和牛完美結合。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/wBiVKL2zNi6NAtPZ6" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://i.meee.com.tw/2g71QH3.jpg" class="rec-img">
+                            <div class="rec-content">
+                                <div class="rec-title">鶏soba 座銀 (Torisoba Zagin)</div>
+                                <p class="rec-desc">雞白湯拉麵，綿密泡沫狀。配炸牛蒡絲，高級感十足。</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/NhPRpx2n6tzXJECw5" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shopping -->
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://i.meee.com.tw/i3EGiGO.png" class="food-img" alt="Nankinmachi">
+                    <div class="illustration-caption">🥟 午後逛街：元町 & 南京町</div>
+                </div>
+                <div class="card-content flex gap-3">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kobe+Motomachi+Shopping+Street" target="_blank" class="btn-map flex-1 justify-center text-xs">元町商店街</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Nankinmachi" target="_blank" class="btn-map flex-1 justify-center text-xs">南京町中華街</a>
+                </div>
+            </div>
+
+            <!-- D3 Dinner -->
+            <div class="card border-2 border-[#e6e0d4]">
+                <div class="img-container">
+                    <img src="https://i.meee.com.tw/umh9Eaj.png" class="food-img" alt="Sushi">
+                    <div class="illustration-caption text-[#fdf5e6] font-bold">★ 晚餐首選：米其林等級壽司</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="font-bold text-xl text-[#5d5246]">Sushi Futami (鮨 ふたみ)</h3>
+                    <p class="text-sm text-[#8d7b68] mt-1 mb-4">精緻的江戶前壽司，享受師傅的職人手藝。</p>
+
+                    <!-- 預約詳情 -->
+                    <div class="bg-[#f0f5e8] border border-[#d4e5d4] rounded-2xl p-4 mb-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="fas fa-calendar-check text-[#6b8c6b]"></i>
+                            <span class="font-bold text-[#5d5246] text-sm">預約資訊</span>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-clock text-[#6b8c6b] text-xs mt-1"></i>
+                                <span class="text-[#5d5246]"><strong>2025-12-21 (星期日) 19:00</strong></span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-users text-[#6b8c6b] text-xs mt-1"></i>
+                                <span class="text-[#5d5246]">2 名</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-user text-[#6b8c6b] text-xs mt-1"></i>
+                                <span class="text-[#5d5246]">chiahao hu</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-receipt text-[#6b8c6b] text-xs mt-1"></i>
+                                <span class="text-[#5d5246] font-mono font-bold">4K6UGNX9TV</span>
+                            </div>
+                            <div class="flex items-start gap-2 pt-2 border-t border-[#d4e5d4]">
+                                <i class="fas fa-external-link-alt text-[#6b8c6b] text-xs mt-1"></i>
+                                <a href="https://yoyaku.tabelog.com/yoyaku/tw/tabelog_booking/send_remind/?escape=false" target="_blank" class="text-[#6b8c6b] hover:text-[#4a6b4a] underline">查看預約詳情</a>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-map-marker-alt text-[#6b8c6b] text-xs mt-1"></i>
+                                <a href="https://tabelog.com/tw/hyogo/A2801/A280101/28058734/dtlmap/" target="_blank" class="text-[#6b8c6b] hover:text-[#4a6b4a] underline">餐廳地址與介紹</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.app.goo.gl/9mMSMfdCvYV8MRUC7" target="_blank" class="btn-map btn-primary w-full justify-center"><i class="fas fa-fish"></i> 餐廳導航</a>
+                    <div class="mt-4 pt-3 border-t border-[#f0ebe0] flex justify-between items-center">
+                        <span class="text-xs text-[#9c8c74]">備選方案：</span>
+                        <div class="flex gap-2">
+                            <a href="https://www.google.com/maps/search/?api=1&query=ESPICE+Kobe" target="_blank" class="text-xs bg-[#f0ebe0] px-3 py-1 rounded-lg text-[#6b5b45] font-medium border border-[#e6e0d4]">ESPICE (法式)</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Oryori+Miyamoto+Kobe" target="_blank" class="text-xs bg-[#f0ebe0] px-3 py-1 rounded-lg text-[#6b5b45] font-medium border border-[#e6e0d4]">宮本 (懷石)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div id="day4" class="section-title">
+                 <div class="flex items-center gap-3">
+                    <span class="bg-[#a9927d] text-white w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold shadow-md rotate-3">D4</span>
+                    <span>12/22 (日) 悠閒離境</span>
+                </div>
+                <div class="weather-tag">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-cloud text-gray-500"></i>
+                        <span>9°C</span>
+                    </div>
+                    <div class="text-xs text-blue-400 flex items-center gap-1">
+                        <i class="fas fa-umbrella"></i> 20%
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border border-[#e6e0d4] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#f0ebe0] flex items-center justify-center text-[#8b7e66] shrink-0 text-lg"><i class="fas fa-suitcase-rolling"></i></div>
+                            <div class="flex-1 pt-1">
+                                <div class="flex justify-between items-center mb-1"><span class="font-bold text-[#5d5246] text-lg">07:30</span></div>
+                                <p class="text-sm text-[#8d7b68]">Check-out，前往 Port Liner 站</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#f0ebe0] flex items-center justify-center text-[#8b7e66] shrink-0 text-lg"><i class="fas fa-train"></i></div>
+                            <div class="flex-1 pt-1">
+                                <div class="flex justify-between items-center mb-1"><span class="font-bold text-[#5d5246] text-lg">07:42</span></div>
+                                <p class="text-sm text-[#8d7b68]">搭乘 Port Liner 往機場</p>
+                                <span class="text-xs bg-[#f9f8f6] px-3 py-1 rounded-full text-[#9c8c74] mt-2 inline-block border border-[#e6e0d4]">約 18 分鐘 • 340 日圓</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#a9927d] flex items-center justify-center text-white shadow-md shrink-0 text-lg"><i class="fas fa-plane-departure"></i></div>
+                            <div class="flex-1 pt-1">
+                                <div class="flex justify-between items-center mb-1"><span class="font-bold text-[#5d5246] text-lg">08:00</span></div>
+                                <p class="text-sm text-[#8d7b68] font-medium">抵達機場，辦理登機 (BR133)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 餐廳遺珠之憾 -->
+            <div class="section-title">
+                <div class="flex items-center gap-3">
+                    <span class="bg-[#8b7e66] text-white w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold shadow-md">💔</span>
+                    <span>餐廳遺珠之憾</span>
+                </div>
+            </div>
+
+            <div class="card collapsible-card border border-[#e6e0d4] shadow-sm">
+                <div class="collapsible-header" onclick="toggleCollapsible('missed')">
+                    <div class="flex items-center gap-3 flex-1 mr-4">
+                        <div class="w-10 h-10 rounded-full bg-[#f0ebe0] flex items-center justify-center text-[#8b7e66]"><i class="fas fa-heart-broken"></i></div>
+                        <h3 class="text-lg font-bold text-[#5d5246] flex-1">來不及吃的美食</h3>
+                        <button onclick="event.stopPropagation(); pickRandom('missed-restaurants')" class="random-pick-btn"><i class="fas fa-dice"></i> 交給命運之神</button>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon" id="missed-icon"></i>
+                </div>
+                <div class="collapsible-content" id="missed-content">
+                    <div class="card-content p-5 pt-0">
+                        <div id="missed-restaurants">
+                            <div class="rec-item">
+                                <img src="https://i.meee.com.tw/SP3bZ0M.png" class="rec-img">
+                                <div class="rec-content">
+                                    <div class="rec-title">老祥記 豬肉包</div>
+                                    <p class="rec-desc">南京町必排，肉汁豐富。</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Roshoki+Nankinmachi" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                            </div>
+                            <div class="rec-item">
+                                <img src="https://i.meee.com.tw/mOhSpoi.png" class="rec-img">
+                                <div class="rec-content">
+                                    <div class="rec-title">西村屋 和味旬彩</div>
+                                    <p class="rec-desc">優雅日式螃蟹料理。</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Nishimuraya+Wami+Shunsai" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                            </div>
+                            <div class="rec-item">
+                                <img src="https://i.meee.com.tw/FpVZBDP.jpg" class="rec-img">
+                                <div class="rec-content">
+                                    <div class="rec-title">Freundlieb 本店 (フロインドリーブ)</div>
+                                    <p class="rec-desc">教堂改建咖啡廳，挑高禮拜堂用餐。烤牛肉三明治招牌。</p>
+                                </div>
+                                <a href="https://maps.app.goo.gl/UqJPKnwjvh4sFDKv7" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                            </div>
+                            <div class="rec-item">
+                                <img src="https://i.meee.com.tw/G9gnzeI.jpg" class="rec-img">
+                                <div class="rec-content">
+                                    <div class="rec-title">力丸壽司 (三宮 Center Plaza 店)</div>
+                                    <p class="rec-desc">兵庫在地平價迴轉壽司，當地人最愛。</p>
+                                </div>
+                                <a href="https://maps.app.goo.gl/o5JtQj7qopHMXr4A7" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                            </div>
+                            <div class="rec-item">
+                                <img src="https://i.meee.com.tw/YvAnemf.jpg" class="rec-img">
+                                <div class="rec-content">
+                                    <div class="rec-title">METRO RAMEN (メトロラーメン)</div>
+                                    <p class="rec-desc">鴨肉出汁拉麵，琥珀色湯頭優雅清甜。全麥麵條Q彈。</p>
+                                </div>
+                                <a href="https://maps.app.goo.gl/rQ2j2T5V3e3W5exu5" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                            </div>
+                            <div class="rec-item">
+                                <img src="https://i.meee.com.tw/SbXvFay.png" class="rec-img">
+                                <div class="rec-content">
+                                    <div class="rec-title">Grill Ipei 洋食</div>
+                                    <p class="rec-desc">老字號，必點滑嫩蛋包飯。</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Grill+Ippei+Sannomiya" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                            </div>
+                            <div class="rec-item">
+                                <img src="https://i.meee.com.tw/H7hxp2b.png" class="rec-img">
+                                <div class="rec-content">
+                                    <div class="rec-title">Red Rock 牛排丼</div>
+                                    <p class="rec-desc">人氣排隊美食，堆成山的牛肉。</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Red+Rock+Kobe+Honten" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                            </div>
+                            <div class="rec-item">
+                                <img src="https://i.meee.com.tw/vt5Pm8j.png" class="rec-img">
+                                <div class="rec-content">
+                                    <div class="rec-title">Mint Kobe 景觀餐廳</div>
+                                    <p class="rec-desc">飯店隔壁，選擇多，夜景佳。</p>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Mint+Kobe" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center text-[#9c8c74] text-xs mt-12 mb-8 font-medium">
+                Designed for a Romantic Trip to Kobe ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 回到頂部按鈕 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="回到頂部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,744 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap'); /* 機票字體 */
+
+/* 日系奶茶色系設定 */
+:root {
+    --bg-cream: #f9f8f6;       /* 米白背景 */
+    --card-white: #ffffff;     /* 卡片白 */
+    --text-coffee: #5d5246;    /* 深咖啡文字 */
+    --text-latte: #9c8c74;     /* 拿鐵色次要文字 */
+    --accent-mocha: #8b7e66;   /* 摩卡色裝飾 */
+    --btn-bg: #f0ebe0;         /* 按鈕淺米色 */
+    --btn-hover: #e6dfcf;      /* 按鈕懸停 */
+    --border-sand: #e6e0d4;    /* 沙色邊框 */
+
+    /* 列表與卡片變數 */
+    --item-bg: #fffbf0;
+    --item-border: #f2eadd;
+    --nav-btn-bg: #e8dfd2;
+    --nav-btn-text: #8a7d6a;
+
+    /* 精選大圖卡片配色 */
+    --feature-border: #dccbb8;
+    --feature-tag-bg: #eee0d0;
+    --feature-tag-text: #8a7d6a;
+
+    /* 長榮航空配色 */
+    --eva-green: #006847;
+    --eva-orange: #f7941d;
+}
+
+body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream); color: var(--text-coffee); margin: 0; padding: 0; }
+
+/* 滾動進場動畫 */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 回到頂部按鈕 */
+.back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to bottom, #a9927d 0%, #8b7e66 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(139, 126, 102, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: linear-gradient(to bottom, #b8a18a 0%, #9c8c76 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(139, 126, 102, 0.4);
+}
+
+.back-to-top:active {
+    transform: translateY(-1px);
+}
+
+/* 手機版調整回到頂部按鈕位置，避開底部導航 */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 120px;
+    }
+}
+
+.card { background: var(--card-white); border-radius: 24px; padding: 0; margin-bottom: 10px; box-shadow: 0 4px 20px rgba(93, 82, 70, 0.05); overflow: hidden; border: 1px solid var(--border-sand); transition: transform 0.2s; }
+.card:active { transform: scale(0.98); }
+.card-content { padding: 20px; }
+
+/* 通用按鈕樣式 */
+.btn-map { background-color: var(--btn-bg); color: var(--text-coffee); padding: 10px 16px; border-radius: 16px; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: background 0.2s; width: 100%; border: 1px solid var(--border-sand); }
+.btn-map:hover { background-color: var(--btn-hover); }
+
+.btn-primary { background-color: var(--accent-mocha); color: white; border: none; }
+.btn-primary:hover { background-color: #6f6352; }
+
+.btn-sm { width: auto; padding: 6px 14px; font-size: 0.8rem; border-radius: 12px; }
+
+/* 推薦清單項目樣式 */
+.rec-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--item-bg);
+    border: 1px solid var(--item-border);
+    border-radius: 20px;
+    padding: 12px;
+    margin-bottom: 12px;
+    gap: 16px;
+    transition: all 0.3s ease;
+}
+.rec-item:last-child { margin-bottom: 0; }
+
+.rec-item {
+    position: relative;
+}
+
+.rec-item.selected-highlight {
+    border-color: #a9927d;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(169, 146, 125, 0.3);
+    transform: scale(1.02);
+}
+.rec-item.dimmed { opacity: 0.5; transform: scale(0.98); }
+
+/* 邱比特圖片樣式 */
+.cupid-icon {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    animation: float 3s ease-in-out infinite;
+    pointer-events: none;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* 選擇動畫中的大邱比特 */
+.cupid-icon-large {
+    width: 90px;
+    height: 90px;
+    top: -30px;
+    right: -30px;
+}
+
+/* 飄動動畫 */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(-5deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+    75% {
+        transform: translateY(-12px) rotate(0deg);
+    }
+}
+
+.rec-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 16px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.rec-content { flex: 1; }
+.rec-title { font-size: 1rem; font-weight: 700; color: #4a4036; margin-bottom: 4px; }
+.rec-desc { font-size: 0.8rem; color: #8d7b68; line-height: 1.4; }
+
+.nav-icon-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background-color: var(--nav-btn-bg);
+    color: var(--nav-btn-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.nav-icon-btn:active { transform: scale(0.95); background-color: #dccbb8; }
+
+/* 精選特寫卡片樣式 */
+.feature-card {
+    display: flex;
+    background: #fffcf7;
+    border: 2px solid var(--feature-border);
+    border-radius: 24px;
+    padding: 16px;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(139, 126, 102, 0.08);
+}
+.feature-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 16px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+.feature-content-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 130px;
+}
+.feature-tag {
+    display: inline-block;
+    background-color: var(--feature-tag-bg);
+    color: var(--feature-tag-text);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+.feature-title { font-size: 1.1rem; font-weight: 800; color: var(--text-coffee); margin-bottom: 4px; line-height: 1.2; }
+.feature-desc { font-size: 0.85rem; color: var(--text-latte); margin-bottom: 12px; }
+.feature-btn {
+    background-color: var(--feature-tag-bg); color: var(--text-coffee); padding: 8px 16px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; align-self: flex-start; transition: background 0.2s;
+}
+.feature-btn:hover { background-color: #e4d2bf; }
+
+.tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.05em; white-space: nowrap; flex-shrink: 0; }
+.tag-hotel { background: #fff8f0; color: #b48b60; }
+.tag-food { background: #f0f5e8; color: #6b8c6b; }
+.tag-spot { background: #f0f4f8; color: #6b7c93; }
+
+.section-title { font-size: 1.4rem; font-weight: 800; color: var(--text-coffee); margin: 40px 0 20px 0; display: flex; justify-content: space-between; align-items: center; padding-left: 8px; }
+.weather-tag { font-size: 0.8rem; font-weight: 500; color: #6b7c93; background: #f0f4f8; padding: 8px 12px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+
+/* 機票樣式 (Boarding Pass) */
+.ticket-container {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 108, 77, 0.15);
+    margin-bottom: 30px;
+    position: relative;
+    border: 1px solid #e6e0d4;
+}
+.ticket-header {
+    background-color: var(--eva-green);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    border-bottom: 4px solid var(--eva-orange);
+}
+.ticket-body { padding: 24px; position: relative; }
+
+/* 飛行路線樣式 */
+.route-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.airport-code { font-size: 2.5rem; font-weight: 700; color: var(--eva-green); font-family: 'Share Tech Mono', monospace; line-height: 1; }
+.airport-name { font-size: 0.85rem; color: #999; margin-top: 4px; font-weight: 500; }
+
+.flight-icon-box { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--eva-orange); position: relative; width: 80px; }
+.flight-icon { font-size: 1.5rem; z-index: 10; background: white; padding: 0 5px; } /* 飛機向右 */
+.flight-date { font-size: 0.75rem; font-weight: 700; margin-top: 4px; color: var(--eva-orange); }
+
+/* 虛線箭頭 */
+.flight-arrow {
+    position: absolute;
+    top: 27%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 2px dashed #fcd34d;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px; }
+.info-item label { display: block; font-size: 0.65rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; font-weight: 600; }
+.info-item span { display: block; font-size: 1.1rem; font-weight: 600; color: #444; font-family: 'Share Tech Mono', monospace; }
+
+/* 分隔線 */
+.ticket-divider {
+    height: 1px;
+    background-image: linear-gradient(to right, #e6e0d4 50%, transparent 50%);
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
+    margin: 24px -24px;
+    position: relative;
+}
+/* 撕票口 */
+.ticket-divider::before, .ticket-divider::after {
+    content: ''; position: absolute; top: -10px; width: 20px; height: 20px;
+    background-color: var(--bg-cream); border-radius: 50%;
+}
+.ticket-divider::before { left: -10px; box-shadow: inset -1px 0 0 #e6e0d4; }
+.ticket-divider::after { right: -10px; box-shadow: inset 1px 0 0 #e6e0d4; }
+
+/* 天氣 Widget */
+.weather-widget {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+.weather-rain { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 20px; }
+
+.food-img { width: 100%; height: 220px; object-fit: cover; display: block; background-color: #f0ebe0; }
+.img-container { position: relative; }
+.illustration-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(60, 50, 40, 0.8), transparent); color: #fdfbf7; padding: 30px 20px 10px; font-size: 0.9rem; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+
+.header-img-container { position: relative; width: 100%; height: 50vh; min-height: 400px; max-height: 600px; overflow: hidden; }
+.header-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.header-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, #f9f8f6 5%, transparent); height: 30%; }
+
+.random-pick-btn { background-color: #8b7e66; color: white; font-size: 0.8rem; padding: 6px 12px; border-radius: 20px; display: flex; align-items: center; gap: 6px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.1s, background-color 0.2s; margin-left: auto; }
+.random-pick-btn:active { transform: scale(0.95); background-color: #6f6352; }
+
+/* 展開/收合樣式 */
+.collapsible-header {
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+    user-select: none;
+    gap: 12px;
+}
+
+.collapsible-header > div:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.collapsible-header h2 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.collapsible-header:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.collapsible-content.expanded {
+    max-height: 1200px;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+    color: var(--accent-mocha);
+}
+
+#flight-icon {
+    color: white !important;
+}
+
+.toggle-icon.rotated {
+    transform: rotate(180deg);
+}
+
+/* Hotel & Flight Container - Desktop Side by Side */
+.hotel-flight-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+@media (min-width: 1024px) {
+    .hotel-flight-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+    .hotel-flight-container > * {
+        flex: 1;
+        min-width: 400px;
+        max-width: none !important; /* 移除個別卡片的寬度限制 */
+    }
+}
+
+/* Day Navigation Tabs */
+.day-nav-container {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 12px 0;
+    margin-top: 0;
+    margin-bottom: 24px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.day-nav-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+        rgba(249, 248, 246, 0.95) 0%,
+        rgba(249, 248, 246, 0.85) 70%,
+        rgba(249, 248, 246, 0) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.day-tab-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    background: linear-gradient(to bottom, #f5f0e5 0%, #ebe5d8 100%);
+    border: 1px solid #d4cbb8;
+    border-radius: 10px;
+    color: var(--text-coffee);
+    font-weight: 600;
+    transition: all 0.15s;
+    cursor: pointer;
+    gap: 6px;
+    flex: 1;
+    font-size: 0.85rem;
+    box-shadow: 0 1px 3px rgba(93, 82, 70, 0.1);
+}
+
+.day-tab-btn.active {
+    background: linear-gradient(to bottom, #a9927d 0%, #8b7e66 100%) !important;
+    border-color: #8b7e66 !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(139, 126, 102, 0.3) !important;
+    transform: translateY(-1px);
+}
+
+.day-tab-btn.active > span,
+.day-tab-btn.active > div,
+.day-tab-btn.active > div > span,
+.day-tab-btn.active i {
+    color: white !important;
+    opacity: 1 !important;
+}
+
+.day-tab-btn > span:first-child {
+    font-size: 0.9rem;
+}
+
+.day-tab-btn > span:nth-child(2) {
+    font-size: 0.7rem;
+}
+
+.day-tab-btn > div {
+    font-size: 0.7rem;
+}
+
+.day-tab-btn:hover {
+    background: linear-gradient(to bottom, #f7f2e7 0%, #ede7da 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(139, 126, 102, 0.15);
+}
+
+.day-tab-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(93, 82, 70, 0.15) inset;
+}
+
+/* 手機版：導航固定在底部 */
+@media (max-width: 768px) {
+    .day-nav-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        margin: 0;
+        padding: 8px 16px 12px;
+        box-shadow: 0 -4px 20px rgba(93, 82, 70, 0.1);
+        border-top: 1px solid var(--border-sand);
+    }
+
+    body {
+        padding-bottom: 100px; /* 為底部導航預留空間 */
+    }
+
+    .day-tab-btn {
+        padding: 6px 8px;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 0.75rem;
+        min-width: 65px;
+    }
+
+    .day-tab-btn > span:first-child {
+        font-size: 0.85rem;
+    }
+
+    .day-tab-btn > span:nth-child(2) {
+        font-size: 0.65rem;
+    }
+
+    .day-tab-btn > div {
+        font-size: 0.65rem;
+    }
+}
+
+/* 輪播樣式 */
+.carousel-container {
+    position: relative;
+}
+
+.carousel-img {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.indicator.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* 電腦版：三選一餐廳並排顯示 */
+@media (min-width: 1024px) {
+    /* 標題區塊在電腦版的豐富排版 */
+    .header-img-container + div > div:first-child {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 32px;
+        text-align: left;
+        align-items: center;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 32px 48px;
+    }
+
+    .header-img-container + div > div:first-child h1 {
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 12px;
+        font-size: 2rem;
+    }
+
+    .header-img-container + div > div:first-child > div:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+
+    .header-img-container + div > div:first-child > div:last-child {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        padding: 20px 28px;
+        font-size: 1rem;
+        gap: 16px;
+    }
+
+    .header-img-container + div > div:first-child > div:last-child > div {
+        gap: 8px;
+    }
+
+    .header-img-container + div > div:first-child > div:last-child #weather-temp {
+        font-size: 1.5rem;
+    }
+
+    /* 一般卡片保持窄版 */
+    .card {
+        max-width: 28rem; /* max-w-md */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 日期標題也保持窄版 */
+    .section-title {
+        max-width: 28rem; /* max-w-md */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 精選特寫卡片也保持窄版 */
+    .feature-card {
+        max-width: 28rem; /* max-w-md */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 卡片外框突破寬度限制 */
+    .card:has(#d1-lunch),
+    .card:has(#d1-dinner),
+    .card:has(#d2-dinner),
+    .card:has(#motomachi-lunch),
+    .card:has(#missed-restaurants) {
+        max-width: 1300px;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 三選一卡片的 card-content 移除左右 padding */
+    .card:has(#d1-lunch) .card-content,
+    .card:has(#d1-dinner) .card-content,
+    .card:has(#d2-dinner) .card-content,
+    .card:has(#motomachi-lunch) .card-content,
+    .card:has(#missed-restaurants) .card-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* 標題區塊添加左右 padding 與卡片對齊 */
+    .card:has(#d1-lunch) .card-content > div:first-child,
+    .card:has(#d1-dinner) .card-content > div:first-child,
+    .card:has(#d2-dinner) .card-content > div:first-child,
+    .card:has(#motomachi-lunch) .card-content > div:first-child {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 遺珠之憾的標題區塊（collapsible-header）也要對齊 */
+    .card:has(#missed-restaurants) .collapsible-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 突破寬度限制 */
+    #d1-lunch,
+    #d1-dinner,
+    #d2-dinner,
+    #motomachi-lunch,
+    #missed-restaurants {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    #d1-lunch .rec-item,
+    #d1-dinner .rec-item,
+    #d2-dinner .rec-item,
+    #motomachi-lunch .rec-item,
+    #missed-restaurants .rec-item {
+        flex-direction: column;
+        margin-bottom: 0;
+        height: 100%;
+    }
+
+    #d1-lunch .rec-img,
+    #d1-dinner .rec-img,
+    #d2-dinner .rec-img,
+    #motomachi-lunch .rec-img,
+    #missed-restaurants .rec-img {
+        width: 100%;
+        height: 200px;
+        border-radius: 12px;
+        margin-bottom: 0;
+    }
+
+    #d1-lunch .rec-content,
+    #d1-dinner .rec-content,
+    #d2-dinner .rec-content,
+    #motomachi-lunch .rec-content,
+    #missed-restaurants .rec-content {
+        flex: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    #d1-lunch .nav-icon-btn,
+    #d1-dinner .nav-icon-btn,
+    #d2-dinner .nav-icon-btn,
+    #motomachi-lunch .nav-icon-btn,
+    #missed-restaurants .nav-icon-btn {
+        width: 100%;
+        height: auto;
+        padding: 12px 20px;
+        justify-content: center;
+        margin-top: auto;
+        gap: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    /* 在電腦版添加文字內容 */
+    #d1-lunch .nav-icon-btn::after,
+    #d1-dinner .nav-icon-btn::after,
+    #d2-dinner .nav-icon-btn::after,
+    #motomachi-lunch .nav-icon-btn::after,
+    #missed-restaurants .nav-icon-btn::after {
+        content: 'Google Map 導航';
+    }
+}
