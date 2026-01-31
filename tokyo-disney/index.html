@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東京迪士尼夢幻之旅 (2/8-11)</title>
+
+    <meta name="description" content="精心規劃的東京迪士尼四日之旅 (2025/2/8-11)。成田日航飯店、迪士尼夢幻鄉飯店、迪士尼樂園飯店、MIMARU新宿。完整行程規劃、餐廳推薦、交通資訊。">
+
+    <link rel="icon" href="../favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <meta name="theme-color" content="#5b8dce">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Disney Trip">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="pb-32 bg-[#f0f4fa]">
+
+    <!-- Hero Image -->
+    <div class="header-img-container w-full">
+        <img src="https://images.unsplash.com/photo-1624601573012-1f24a78ba424?w=1200&q=80"
+             class="header-img"
+             alt="東京迪士尼"
+             onerror="this.src='https://images.unsplash.com/photo-1545562083-c583d014b4f2?w=1200&q=80'">
+        <div class="header-overlay"></div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="mx-auto px-4 relative z-10">
+
+        <!-- Header Content -->
+        <div class="bg-[#f0f4fa]/95 backdrop-blur-md p-6 shadow-lg border border-[#d4dff0] rounded-3xl text-center transform -translate-y-12">
+            <h1 class="text-2xl font-bold text-[#3a4a6b] tracking-tight mb-3">東京迪士尼夢幻之旅</h1>
+            <div class="flex items-center justify-center gap-3 text-[#7b8fad] text-xs font-bold uppercase tracking-wide mb-3">
+                <span class="bg-[#e0e8f5] px-2 py-1 rounded">2/8 - 2/11</span>
+                <span class="text-[#c4d0e4]">&#8226;</span>
+                <span class="bg-[#e0e8f5] px-2 py-1 rounded">CI106</span>
+            </div>
+            <!-- Weather -->
+            <div class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-400 to-indigo-500 text-white px-4 py-2 rounded-full text-sm shadow-md">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-calendar-day text-xs"></i>
+                    <span id="weather-date" class="text-xs font-medium">--/--</span>
+                </div>
+                <div class="w-px h-4 bg-white/30"></div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span id="weather-temp" class="font-bold">--&#176;C</span>
+                </div>
+                <div class="w-px h-4 bg-white/30"></div>
+                <div class="flex items-center gap-1 text-xs">
+                    <i class="fas fa-umbrella"></i>
+                    <span id="rain-chance">--%</span>
+                </div>
+                <div class="w-px h-4 bg-white/30"></div>
+                <span id="weather-desc" class="text-xs">載入中</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div>
+
+            <!-- Hotel & Flight Container -->
+            <div class="hotel-flight-container">
+
+            <!-- Hotel Info (Collapsible) -->
+            <div class="card collapsible-card">
+                <div class="collapsible-header" onclick="toggleCollapsible('hotel')">
+                    <div class="flex items-center gap-3">
+                        <span class="tag tag-hotel">住宿總覽</span>
+                        <h2 class="text-lg font-bold text-[#3a4a6b]">四晚住宿安排</h2>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon" id="hotel-icon"></i>
+                </div>
+                <div class="collapsible-content" id="hotel-content">
+                    <div class="card-content">
+                        <div class="space-y-4">
+                            <!-- Hotel 1 -->
+                            <div class="bg-[#f5f0ff] border border-[#e0d8f0] rounded-2xl p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fas fa-hotel text-[#7b68ae]"></i>
+                                    <span class="font-bold text-[#3a4a6b] text-sm">2/8 (六)</span>
+                                </div>
+                                <h3 class="font-bold text-[#3a4a6b]">成田日航飯店</h3>
+                                <p class="text-[#7b8fad] text-xs mt-1">Hotel Nikko Narita</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Nikko+Narita" target="_blank" class="btn-map mt-2 text-xs">
+                                    <i class="fas fa-map-marker-alt text-[#5b8dce]"></i> Google Map
+                                </a>
+                            </div>
+                            <!-- Hotel 2 -->
+                            <div class="bg-[#fff0f5] border border-[#f0d8e0] rounded-2xl p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fas fa-hat-wizard text-[#d4619c]"></i>
+                                    <span class="font-bold text-[#3a4a6b] text-sm">2/9 (日)</span>
+                                </div>
+                                <h3 class="font-bold text-[#3a4a6b]">東京迪士尼夢幻鄉飯店</h3>
+                                <p class="text-[#7b8fad] text-xs mt-1">Tokyo Disney Fantasia Hotel</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland+Hotel" target="_blank" class="btn-map mt-2 text-xs">
+                                    <i class="fas fa-map-marker-alt text-[#5b8dce]"></i> Google Map
+                                </a>
+                            </div>
+                            <!-- Hotel 3 -->
+                            <div class="bg-[#f0f8ff] border border-[#d0e4f5] rounded-2xl p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fas fa-castle text-[#5b8dce]"></i>
+                                    <span class="font-bold text-[#3a4a6b] text-sm">2/10 (一)</span>
+                                </div>
+                                <h3 class="font-bold text-[#3a4a6b]">東京迪士尼樂園飯店</h3>
+                                <p class="text-[#7b8fad] text-xs mt-1">Tokyo Disneyland Hotel</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland+Hotel" target="_blank" class="btn-map mt-2 text-xs">
+                                    <i class="fas fa-map-marker-alt text-[#5b8dce]"></i> Google Map
+                                </a>
+                            </div>
+                            <!-- Hotel 4 -->
+                            <div class="bg-[#f5fff0] border border-[#d8f0d0] rounded-2xl p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fas fa-city text-[#6b9c5b]"></i>
+                                    <span class="font-bold text-[#3a4a6b] text-sm">2/11 (二)</span>
+                                </div>
+                                <h3 class="font-bold text-[#3a4a6b]">MIMARU 新宿 WEST</h3>
+                                <p class="text-[#7b8fad] text-xs mt-1">MIMARU Tokyo Shinjuku WEST</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=MIMARU+Tokyo+Shinjuku+WEST" target="_blank" class="btn-map mt-2 text-xs">
+                                    <i class="fas fa-map-marker-alt text-[#5b8dce]"></i> Google Map
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flight Ticket Style -->
+            <div class="ticket-container collapsible-card">
+                <div class="ticket-header flex items-center justify-between" onclick="toggleCollapsible('flight')" style="cursor: pointer; padding: 0;">
+                    <div class="bg-white px-6 py-4 flex items-center" style="clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);">
+                        <span class="text-xl font-bold text-[#003d79]">China Airlines</span>
+                    </div>
+                    <div class="flex items-center gap-3 px-6">
+                        <span class="text-xs font-bold tracking-widest opacity-90">TPE &rArr; NRT</span>
+                        <i class="fas fa-chevron-down toggle-icon text-white" id="flight-icon"></i>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="flight-content">
+                <div class="ticket-body">
+                    <div class="route-row">
+                        <div>
+                            <div class="airport-code">TPE</div>
+                            <div class="airport-name">Taipei</div>
+                        </div>
+                        <div class="flight-icon-box">
+                            <div class="flight-arrow"></div>
+                            <i class="fas fa-plane flight-icon"></i>
+                            <div class="flight-date">2/8</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="airport-code">NRT</div>
+                            <div class="airport-name">Tokyo Narita</div>
+                        </div>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item"><label>FLIGHT</label><span>CI106</span></div>
+                        <div class="info-item"><label>ARRIVES</label><span>20:30</span></div>
+                        <div class="info-item"><label>CLASS</label><span>ECO</span></div>
+                        <div class="info-item"><label>TERMINAL</label><span>T2</span></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+            <!-- End Hotel & Flight Container -->
+
+            <!-- Day Navigation Tabs -->
+            <div class="day-nav-container">
+                <div class="max-w-md mx-auto px-4">
+                    <div class="flex gap-2 justify-center">
+                        <button onclick="scrollToDay('day1')" class="day-tab-btn">
+                            <span class="font-bold">D1</span>
+                            <span class="text-xs opacity-80">2/8</span>
+                        </button>
+                        <button onclick="scrollToDay('day2')" class="day-tab-btn">
+                            <span class="font-bold">D2</span>
+                            <span class="text-xs opacity-80">2/9</span>
+                        </button>
+                        <button onclick="scrollToDay('day3')" class="day-tab-btn">
+                            <span class="font-bold">D3</span>
+                            <span class="text-xs opacity-80">2/10</span>
+                        </button>
+                        <button onclick="scrollToDay('day4')" class="day-tab-btn">
+                            <span class="font-bold">D4</span>
+                            <span class="text-xs opacity-80">2/11</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== Day 1: 2/8 ==================== -->
+            <div id="day1" class="section-title">
+                <div class="flex items-center gap-3">
+                    <span class="day-badge">D1</span>
+                    <span>2/8 (六) 抵達成田</span>
+                </div>
+            </div>
+
+            <!-- D1 Arrival -->
+            <div class="card border border-[#d4dff0] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-start mb-4">
+                        <div class="w-14 h-14 rounded-full border-2 border-[#e0e8f5] flex items-center justify-center text-[#5b8dce] text-xl bg-white shrink-0 shadow-sm">
+                            <i class="fas fa-plane-arrival"></i>
+                        </div>
+                        <div class="ml-4 mt-1">
+                            <h3 class="text-xl font-bold text-[#3a4a6b] tracking-tight">20:30 抵達成田機場</h3>
+                            <p class="text-[#7b8fad] text-sm mt-1 leading-relaxed">
+                                搭乘 CI106 班機抵達成田國際機場。<br>
+                                搭乘飯店接駁車前往成田日航飯店。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-[#f5f8ff] border border-[#e0e8f5] rounded-2xl p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fas fa-shuttle-van text-[#5b8dce]"></i>
+                            <span class="font-bold text-[#3a4a6b] text-sm">交通方式</span>
+                        </div>
+                        <p class="text-sm text-[#5a6d8a]">成田日航飯店提供免費接駁車，機場第二航廈出口搭乘。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-[#e0e8f5] flex items-center justify-center text-[#5b8dce] shrink-0 text-lg">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <h3 class="font-bold text-lg text-[#3a4a6b]">成田日航飯店</h3>
+                            <p class="text-sm text-[#7b8fad] mt-1">Hotel Nikko Narita - 距離機場僅 10 分鐘車程，舒適休息準備隔天行程。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Nikko+Narita" target="_blank" class="btn-map mt-3">
+                                <i class="fas fa-map-marker-alt text-[#5b8dce]"></i> 開啟 Google Map
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== Day 2: 2/9 ==================== -->
+            <div id="day2" class="section-title">
+                <div class="flex items-center gap-3">
+                    <span class="day-badge">D2</span>
+                    <span>2/9 (日) IKSPIARI & 迪士尼夜間</span>
+                </div>
+            </div>
+
+            <!-- D2 Morning: Transfer -->
+            <div class="card border border-[#d4dff0] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-start mb-4">
+                        <div class="w-14 h-14 rounded-full border-2 border-[#e0e8f5] flex items-center justify-center text-[#5b8dce] text-xl bg-white shrink-0 shadow-sm">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="ml-4 mt-1">
+                            <h3 class="text-xl font-bold text-[#3a4a6b] tracking-tight">上午 前往迪士尼度假區</h3>
+                            <p class="text-[#7b8fad] text-sm mt-1 leading-relaxed">
+                                從成田日航飯店出發，前往東京迪士尼夢幻鄉飯店。<br>
+                                先寄放行李後前往 IKSPIARI 購物商城享用午餐。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-[#f5f8ff] border border-[#e0e8f5] rounded-2xl p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fas fa-route text-[#5b8dce]"></i>
+                            <span class="font-bold text-[#3a4a6b] text-sm">交通路線</span>
+                        </div>
+                        <p class="text-sm text-[#5a6d8a]">成田日航 &rarr; (利木津巴士/JR成田特快) &rarr; 舞濱站 &rarr; 迪士尼度假區</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D2 Lunch: IKSPIARI - Random Pick -->
+            <div class="card border border-[#d4dff0] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-center gap-3 mb-4 w-full flex-wrap">
+                        <div class="w-10 h-10 rounded-full bg-[#e8f0e0] flex items-center justify-center text-[#6b8c6b]"><i class="fas fa-utensils"></i></div>
+                        <h3 class="text-lg font-bold text-[#3a4a6b] flex-1 min-w-[140px]">IKSPIARI 午餐推薦</h3>
+                        <button onclick="pickRandom('ikspiari-lunch')" class="random-pick-btn"><i class="fas fa-dice"></i> 交給命運之神</button>
+                    </div>
+                    <div id="ikspiari-lunch">
+                        <div class="rec-item">
+                            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=300&q=80" class="rec-img" alt="Rain Forest Cafe">
+                            <div class="rec-content">
+                                <div class="rec-title">Rain Forest Cafe</div>
+                                <p class="rec-desc">熱帶雨林主題餐廳，動態的叢林裝飾與雷暴效果。漢堡、排餐、義大利麵，適合全家享用，用餐體驗超有趣。</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Rainforest+Cafe+IKSPIARI" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=300&q=80" class="rec-img" alt="Red Lobster">
+                            <div class="rec-content">
+                                <div class="rec-title">Red Lobster</div>
+                                <p class="rec-desc">經典美式海鮮連鎖。招牌起司餅乾、龍蝦尾與蒜蓉奶油蝦，新鮮份量大，適合大快朵頤。</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Red+Lobster+IKSPIARI" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                        <div class="rec-item">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=300&q=80" class="rec-img" alt="Cafe Kaila">
+                            <div class="rec-content">
+                                <div class="rec-title">Eggs 'n Things</div>
+                                <p class="rec-desc">夏威夷人氣早午餐名店。招牌奶油山鬆餅高度驚人，蛋料理與培根口味道地，輕鬆悠閒的度假風格。</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Eggs+n+Things+IKSPIARI" target="_blank" class="nav-icon-btn"><i class="fas fa-location-arrow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D2 Afternoon: Disney Night Ticket -->
+            <div class="card border-2 border-[#d4dff0]">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1597466660388-3ea54c95a9ba?w=800&q=80" class="food-img" alt="Tokyo Disneyland">
+                    <div class="illustration-caption text-white font-bold">17:00 迪士尼樂園夜間票入園</div>
+                </div>
+                <div class="card-content">
+                    <span class="tag tag-spot">重點行程</span>
+                    <h3 class="font-bold text-xl text-[#3a4a6b]">東京迪士尼樂園 - 夜間票</h3>
+                    <p class="text-sm text-[#7b8fad] mt-1 mb-4">17:00 購買夜間票入園，觀賞迪士尼夢幻遊行與璀璨煙火秀。夜晚的城堡光雕投影絕對不能錯過！</p>
+
+                    <div class="bg-[#fff5f8] border border-[#f0d8e0] rounded-2xl p-4 mb-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="fas fa-star text-[#d4619c]"></i>
+                            <span class="font-bold text-[#3a4a6b] text-sm">必看節目</span>
+                        </div>
+                        <div class="space-y-2 text-sm text-[#5a4a6a]">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-music text-[#d4619c]"></i>
+                                <span>夢幻遊行 (Electrical Parade Dreamlights)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-fire text-[#d4619c]"></i>
+                                <span>煙火秀 (Disney Harmony in Color)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-chess-rook text-[#d4619c]"></i>
+                                <span>城堡光雕投影</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland" target="_blank" class="btn-map btn-primary w-full justify-center">
+                        <i class="fas fa-map-marker-alt"></i> 樂園導航
+                    </a>
+                </div>
+            </div>
+
+            <!-- D2 Hotel -->
+            <div class="card">
+                <div class="card-content p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-[#f0e0f0] flex items-center justify-center text-[#9b6bae] shrink-0 text-lg">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <h3 class="font-bold text-lg text-[#3a4a6b]">東京迪士尼夢幻鄉飯店</h3>
+                            <p class="text-sm text-[#7b8fad] mt-1">入住迪士尼度假區內飯店，享受魔法般的住宿體驗。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== Day 3: 2/10 ==================== -->
+            <div id="day3" class="section-title">
+                <div class="flex items-center gap-3">
+                    <span class="day-badge">D3</span>
+                    <span>2/10 (一) 迪士尼海洋</span>
+                </div>
+            </div>
+
+            <!-- D3 Timeline -->
+            <div class="card border border-[#d4dff0] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#fff5e0] flex items-center justify-center text-[#d4a03c] shrink-0 text-lg">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <div class="flex-1 pt-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-[#3a4a6b] text-lg">06:30</span>
+                                </div>
+                                <p class="text-sm text-[#7b8fad]">夢幻鄉飯店早餐</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#e0e8f5] flex items-center justify-center text-[#5b8dce] shrink-0 text-lg">
+                                <i class="fas fa-door-open"></i>
+                            </div>
+                            <div class="flex-1 pt-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-[#3a4a6b] text-lg">08:00</span>
+                                </div>
+                                <p class="text-sm text-[#7b8fad]">回房間整理</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#f5e0e0] flex items-center justify-center text-[#ce5b5b] shrink-0 text-lg">
+                                <i class="fas fa-suitcase"></i>
+                            </div>
+                            <div class="flex-1 pt-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-[#3a4a6b] text-lg">08:30</span>
+                                </div>
+                                <p class="text-sm text-[#7b8fad]">送行李至櫃檯寄放</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-[#5b8dce] flex items-center justify-center text-white shadow-md shrink-0 text-lg">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <div class="flex-1 pt-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-[#3a4a6b] text-lg">08:45</span>
+                                </div>
+                                <p class="text-sm text-[#7b8fad] font-medium">入園！東京迪士尼海洋</p>
+                                <span class="text-xs bg-[#e0e8f5] px-3 py-1 rounded-full text-[#5b8dce] mt-2 inline-block border border-[#d4dff0] font-bold">
+                                    <i class="fas fa-ship"></i> DisneySea
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D3 DisneySea -->
+            <div class="card border-2 border-[#d4dff0]">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1565633667067-e4e5f2334ef1?w=800&q=80" class="food-img" alt="DisneySea">
+                    <div class="illustration-caption text-white font-bold">08:45 東京迪士尼海洋全日暢玩</div>
+                </div>
+                <div class="card-content">
+                    <span class="tag tag-spot">重點行程</span>
+                    <h3 class="font-bold text-xl text-[#3a4a6b]">東京迪士尼海洋</h3>
+                    <p class="text-sm text-[#7b8fad] mt-1 mb-4">從夢幻鄉飯店專屬入口進入海洋園區，全日暢玩各大設施。推薦必玩：翱翔夢幻奇航、玩具總動員、驚魂古塔。</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+DisneySea" target="_blank" class="btn-map btn-primary w-full justify-center">
+                        <i class="fas fa-water"></i> 海洋園區導航
+                    </a>
+                </div>
+            </div>
+
+            <!-- D3 Hotel -->
+            <div class="card">
+                <div class="card-content p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-[#e0e8f5] flex items-center justify-center text-[#5b8dce] shrink-0 text-lg">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <h3 class="font-bold text-lg text-[#3a4a6b]">晚上入住：東京迪士尼樂園飯店</h3>
+                            <p class="text-sm text-[#7b8fad] mt-1">閉園後步行即可抵達，直通樂園的夢幻住宿體驗。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland+Hotel" target="_blank" class="btn-map mt-3">
+                                <i class="fas fa-map-marker-alt text-[#5b8dce]"></i> 飯店導航
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== Day 4: 2/11 ==================== -->
+            <div id="day4" class="section-title">
+                <div class="flex items-center gap-3">
+                    <span class="day-badge">D4</span>
+                    <span>2/11 (二) 樂園 & 移動新宿</span>
+                </div>
+            </div>
+
+            <!-- D4 Morning: Disneyland -->
+            <div class="card border-2 border-[#d4dff0]">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1613823797067-45fa6ef4f678?w=800&q=80" class="food-img" alt="Disneyland">
+                    <div class="illustration-caption text-white font-bold">08:45 東京迪士尼樂園入園</div>
+                </div>
+                <div class="card-content">
+                    <span class="tag tag-spot">重點行程</span>
+                    <h3 class="font-bold text-xl text-[#3a4a6b]">東京迪士尼樂園</h3>
+                    <p class="text-sm text-[#7b8fad] mt-1 mb-4">從樂園飯店專屬入口 08:45 入園，享受一整天的迪士尼魔法！</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland" target="_blank" class="btn-map btn-primary w-full justify-center">
+                        <i class="fas fa-chess-rook"></i> 樂園導航
+                    </a>
+                </div>
+            </div>
+
+            <!-- D4 Evening: Departure Timeline -->
+            <div class="card border border-[#d4dff0] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-full bg-[#fff5e0] flex items-center justify-center text-[#d4a03c]">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#3a4a6b]">傍晚離園 & 移動新宿</h3>
+                    </div>
+
+                    <div class="flex flex-col gap-5">
+
+                        <!-- 19:00 離園 -->
+                        <div class="timeline-item">
+                            <div class="timeline-time">19:00</div>
+                            <div class="timeline-content">
+                                <div class="font-bold text-[#3a4a6b]">離開樂園大門</div>
+                                <p class="text-xs text-[#7b8fad] mt-1">此時第一波離園高峰尚未開始，出入園口與步行天橋都較為順暢。</p>
+                            </div>
+                        </div>
+
+                        <!-- 19:00-19:20 領行李 -->
+                        <div class="timeline-item">
+                            <div class="timeline-time">19:20</div>
+                            <div class="timeline-content">
+                                <div class="font-bold text-[#3a4a6b]">樂園飯店領行李</div>
+                                <p class="text-xs text-[#7b8fad] mt-1">步行至東京迪士尼樂園大飯店 Bell Desk。此時排隊人數較少，處理速度快。</p>
+                            </div>
+                        </div>
+
+                        <!-- 19:20-19:40 前往舞濱站 -->
+                        <div class="timeline-item">
+                            <div class="timeline-time">19:40</div>
+                            <div class="timeline-content">
+                                <div class="font-bold text-[#3a4a6b]">前往 JR 舞濱站</div>
+                                <p class="text-xs text-[#7b8fad] mt-1">穿過天橋抵達車站，不用跟煙火散場的人群擠。</p>
+                            </div>
+                        </div>
+
+                        <!-- 19:45 搭電車 -->
+                        <div class="timeline-item">
+                            <div class="timeline-time">19:45</div>
+                            <div class="timeline-content">
+                                <div class="font-bold text-[#3a4a6b]">搭乘電車前往新宿</div>
+                                <div class="bg-[#f5f8ff] border border-[#e0e8f5] rounded-xl p-3 mt-2">
+                                    <p class="text-xs text-[#5a6d8a] leading-relaxed">
+                                        <i class="fas fa-train text-[#5b8dce]"></i>
+                                        舞濱站 <i class="fas fa-arrow-right text-xs text-[#7b8fad]"></i> (JR 京葉線) <i class="fas fa-arrow-right text-xs text-[#7b8fad]"></i> 新木場站 <i class="fas fa-arrow-right text-xs text-[#7b8fad]"></i> (臨海高速鐵道 直通 JR 埼京線) <i class="fas fa-arrow-right text-xs text-[#7b8fad]"></i> 新宿站
+                                    </p>
+                                    <p class="text-xs text-[#7b8fad] mt-2"><i class="fas fa-lightbulb text-yellow-500"></i> 建議選擇新木場發車且「直通」新宿方向的列車，不用中途換車。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 20:35-20:45 抵達新宿 -->
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:45</div>
+                            <div class="timeline-content">
+                                <div class="font-bold text-[#3a4a6b]">抵達新宿站</div>
+                                <p class="text-xs text-[#7b8fad] mt-1">往「南口」或「西口」方向移動。</p>
+                            </div>
+                        </div>
+
+                        <!-- 21:00 抵達飯店 -->
+                        <div class="timeline-item">
+                            <div class="timeline-time">21:00</div>
+                            <div class="timeline-content">
+                                <div class="font-bold text-[#3a4a6b]">抵達 MIMARU 新宿 WEST</div>
+                                <p class="text-xs text-[#7b8fad] mt-1">從車站步行約 10-12 分鐘。準時 21:00 抵達飯店大廳，從容辦理 Check-in。</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=Tokyo+Disneyland&destination=MIMARU+Tokyo+Shinjuku+WEST&travelmode=transit" target="_blank" class="btn-map btn-primary w-full justify-center mt-5">
+                        <i class="fas fa-route"></i> 查看完整路線
+                    </a>
+                </div>
+            </div>
+
+            <!-- D4 Hotel -->
+            <div class="card">
+                <div class="card-content p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-[#e8f5e0] flex items-center justify-center text-[#6b9c5b] shrink-0 text-lg">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <h3 class="font-bold text-lg text-[#3a4a6b]">MIMARU 新宿 WEST</h3>
+                            <p class="text-sm text-[#7b8fad] mt-1">公寓式飯店，空間寬敞，附有廚房設備，非常適合家庭入住。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=MIMARU+Tokyo+Shinjuku+WEST" target="_blank" class="btn-map mt-3">
+                                <i class="fas fa-map-marker-alt text-[#5b8dce]"></i> 飯店導航
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center text-[#7b8fad] text-xs mt-12 mb-8 font-medium">
+                Designed for a Magical Trip to Tokyo Disney
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="回到頂部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
