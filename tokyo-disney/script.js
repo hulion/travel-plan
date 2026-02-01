@@ -100,7 +100,7 @@ function updateActiveDay(dayId) {
 
 // Scroll Spy
 function initScrollSpy() {
-    const days = ['day1', 'day2', 'day3', 'day4', 'day5'];
+    const days = ['day1', 'day2', 'day3', 'day4', 'day5', 'day6'];
     let isScrolling = false;
 
     window.addEventListener('scroll', () => {
