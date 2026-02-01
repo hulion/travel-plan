@@ -111,12 +111,17 @@ function initScrollSpy() {
 
         let currentDay = null;
         const scrollPosition = window.scrollY + 200;
+        const atBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 100);
 
-        for (let i = days.length - 1; i >= 0; i--) {
-            const element = document.getElementById(days[i]);
-            if (element && element.offsetTop <= scrollPosition) {
-                currentDay = days[i];
-                break;
+        if (atBottom) {
+            currentDay = days[days.length - 1];
+        } else {
+            for (let i = days.length - 1; i >= 0; i--) {
+                const element = document.getElementById(days[i]);
+                if (element && element.offsetTop <= scrollPosition) {
+                    currentDay = days[i];
+                    break;
+                }
             }
         }
 
