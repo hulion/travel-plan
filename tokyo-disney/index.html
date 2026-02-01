@@ -39,7 +39,7 @@
         <div class="bg-[#f0f4fa]/95 backdrop-blur-md p-6 shadow-lg border border-[#d4dff0] rounded-3xl text-center transform -translate-y-12">
             <h1 class="text-2xl font-bold text-[#3a4a6b] tracking-tight mb-3">東京夢幻之旅</h1>
             <div class="flex items-center justify-center gap-3 text-[#7b8fad] text-xs font-bold uppercase tracking-wide mb-3">
-                <span class="bg-[#e0e8f5] px-2 py-1 rounded">2/8 - 2/17</span>
+                <span class="bg-[#e0e8f5] px-2 py-1 rounded">2/8 - 2/18</span>
                 <span class="text-[#c4d0e4]">&#8226;</span>
                 <span class="bg-[#e0e8f5] px-2 py-1 rounded">CI106</span>
             </div>
@@ -202,6 +202,15 @@
                                     <i class="fas fa-map-marker-alt text-[#5b8dce]"></i> Google Map
                                 </a>
                             </div>
+                            <!-- Day 11 -->
+                            <div class="bg-[#f0f5ff] border border-[#d0e0f5] rounded-2xl p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fas fa-plane-departure text-[#e05a5a]"></i>
+                                    <span class="font-bold text-[#3a4a6b] text-sm">2/18 (三)</span>
+                                </div>
+                                <h3 class="font-bold text-[#3a4a6b]">回家！CI 0107</h3>
+                                <p class="text-[#7b8fad] text-xs mt-1">NRT 09:20 → TPE 12:30</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -292,6 +301,10 @@
                         <button onclick="scrollToDay('day10')" class="day-tab-btn">
                             <span class="font-bold">D10</span>
                             <span class="text-xs opacity-80">2/17</span>
+                        </button>
+                        <button onclick="scrollToDay('day11')" class="day-tab-btn">
+                            <span class="font-bold">D11</span>
+                            <span class="text-xs opacity-80">2/18</span>
                         </button>
                     </div>
                 </div>
@@ -2050,6 +2063,33 @@
                 </div>
             </div>
 
+            <!-- D10 Skyliner Ticket Reminder -->
+            <div class="card border-2 border-[#e05a5a]/30 shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-full border-2 border-[#f0e0d0] flex items-center justify-center text-[#e05a5a] text-xl bg-white shrink-0 shadow-sm">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <h3 class="text-xl font-bold text-[#e05a5a] tracking-tight">今天要買明天的 Skyliner 車票！</h3>
+                            <p class="text-[#7b8fad] text-sm mt-1 leading-relaxed">
+                                回上野時順路到<strong class="text-[#3a4a6b]">京成上野站</strong>購買明早 <strong class="text-[#3a4a6b]">05:40</strong> 始發 Skyliner 的指定席車票。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-[#fff0f0] border border-[#f0d8d8] rounded-2xl p-4 mt-4">
+                        <div class="space-y-2 text-xs text-[#5a6d8a]">
+                            <div class="bg-white rounded-xl p-2"><i class="fas fa-train text-[#e05a5a]"></i> <strong>班次：</strong>Skyliner 始發 05:40 京成上野 → 06:24 成田空港第二航廈</div>
+                            <div class="bg-white rounded-xl p-2"><i class="fas fa-yen-sign text-[#e05a5a]"></i> <strong>票價：</strong>大人 ¥2,580 × 3 ＋ 兒童 ¥1,290 × 1 ＝ <strong class="text-[#e05a5a]">¥9,030</strong></div>
+                            <div class="bg-white rounded-xl p-2"><i class="fas fa-map-pin text-[#e05a5a]"></i> <strong>售票處：</strong>京成上野站 Skyliner 售票窗口或自動售票機</div>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=京成上野駅" target="_blank" class="btn-map mt-4">
+                        <i class="fas fa-map-marker-alt text-[#5b8dce]"></i> 京成上野站導航
+                    </a>
+                </div>
+            </div>
+
             <!-- D10 Hotel -->
             <div class="card">
                 <div class="card-content p-5">
@@ -2058,9 +2098,189 @@
                             <i class="fas fa-bed"></i>
                         </div>
                         <div class="flex-1 pt-1">
-                            <h3 class="font-bold text-lg text-[#3a4a6b]">MIMARU 東京上野 NORTH (連泊)</h3>
-                            <p class="text-sm text-[#7b8fad] mt-1">回到公寓式飯店，整理今天在銀座的戰利品。</p>
+                            <h3 class="font-bold text-lg text-[#3a4a6b]">MIMARU 東京上野 NORTH (最後一晚)</h3>
+                            <p class="text-sm text-[#7b8fad] mt-1">回到公寓式飯店，整理行李打包，明天一早出發！</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== Day 11: 2/18 ==================== -->
+            <div id="day11" class="section-title">
+                <div class="flex items-center gap-3">
+                    <span class="day-badge" style="background: linear-gradient(135deg, #5b8dce, #3a4a6b);">D11</span>
+                    <span>2/18 (三) 回家！</span>
+                </div>
+            </div>
+
+            <!-- D11 Morning Timeline -->
+            <div class="card border border-[#d4dff0] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-full bg-[#fff5e0] flex items-center justify-center text-[#d4a03c]">
+                            <i class="fas fa-alarm-clock"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#3a4a6b]">早起出發日</h3>
+                    </div>
+
+                    <div class="space-y-3">
+                        <!-- 04:50 起床 -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-16 text-right shrink-0">
+                                <span class="text-sm font-bold text-[#e05a5a]">04:50</span>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-[#e05a5a] mt-1.5 shrink-0"></div>
+                            <div>
+                                <div class="font-bold text-[#3a4a6b]">起床・準備出發</div>
+                                <p class="text-xs text-[#7b8fad]">最後檢查行李，確認護照、機票、退稅物品。</p>
+                            </div>
+                        </div>
+                        <!-- 05:10 退房 -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-16 text-right shrink-0">
+                                <span class="text-sm font-bold text-[#d4a03c]">05:10</span>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-[#d4a03c] mt-1.5 shrink-0"></div>
+                            <div>
+                                <div class="font-bold text-[#3a4a6b]">退房離開飯店</div>
+                                <p class="text-xs text-[#7b8fad]">MIMARU 可自助退房，鑰匙放回櫃台即可。</p>
+                            </div>
+                        </div>
+                        <!-- 05:20 步行到京成上野 -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-16 text-right shrink-0">
+                                <span class="text-sm font-bold text-[#d4a03c]">05:20</span>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-[#d4a03c] mt-1.5 shrink-0"></div>
+                            <div>
+                                <div class="font-bold text-[#3a4a6b]">步行至京成上野站</div>
+                                <p class="text-xs text-[#7b8fad]">從飯店步行約 8 分鐘抵達京成上野站。</p>
+                            </div>
+                        </div>
+                        <!-- 05:40 Skyliner 始發 -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-16 text-right shrink-0">
+                                <span class="text-sm font-bold text-[#5b8dce]">05:40</span>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-[#5b8dce] mt-1.5 shrink-0"></div>
+                            <div>
+                                <div class="font-bold text-[#3a4a6b]">搭乘 Skyliner 始發車</div>
+                                <p class="text-xs text-[#7b8fad]">京成上野 05:40 發 → 成田空港第二航廈 06:24 著，44 分鐘直達。（車票已於前一天購買）</p>
+                            </div>
+                        </div>
+                        <!-- 06:24 到達成田 -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-16 text-right shrink-0">
+                                <span class="text-sm font-bold text-[#5b8dce]">06:24</span>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-[#5b8dce] mt-1.5 shrink-0"></div>
+                            <div>
+                                <div class="font-bold text-[#3a4a6b]">抵達成田機場</div>
+                                <p class="text-xs text-[#7b8fad]">距離登機約 3 小時，充足時間辦理報到、安檢、逛免稅店。</p>
+                            </div>
+                        </div>
+                        <!-- 09:20 起飛 -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-16 text-right shrink-0">
+                                <span class="text-sm font-bold text-[#e05a5a]">09:20</span>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-[#e05a5a] mt-1.5 shrink-0"></div>
+                            <div>
+                                <div class="font-bold text-[#3a4a6b]">✈ 起飛！CI 0107</div>
+                                <p class="text-xs text-[#7b8fad]">成田 NRT → 桃園 TPE，預計 12:30 抵達台灣。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D11 Flight Ticket -->
+            <div class="ticket-container">
+                <div class="ticket-header">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-plane text-lg"></i>
+                        <div>
+                            <div class="text-sm font-bold tracking-wider">CI 0107</div>
+                            <div class="text-xs opacity-80">China Airlines</div>
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold tracking-widest opacity-90">2/18</span>
+                </div>
+                <div class="ticket-body">
+                    <div class="route-row">
+                        <div>
+                            <div class="airport-code">NRT</div>
+                            <div class="airport-name">東京（成田）</div>
+                        </div>
+                        <div class="flight-icon-box">
+                            <div class="flight-arrow"></div>
+                            <i class="fas fa-plane flight-icon"></i>
+                            <div class="flight-date">3h10m</div>
+                        </div>
+                        <div>
+                            <div class="airport-code">TPE</div>
+                            <div class="airport-name">臺北（桃園）</div>
+                        </div>
+                    </div>
+                    <div class="ticket-details">
+                        <div class="info-item"><label>出發</label><span>09:20</span></div>
+                        <div class="info-item"><label>抵達</label><span>12:30</span></div>
+                        <div class="info-item"><label>訂位代號</label><span>EUOPZV</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D11 Reminders -->
+            <div class="card border border-[#d4dff0] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#fff0f0] flex items-center justify-center text-[#e05a5a]">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#3a4a6b]">出發前 Checklist</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-[#5a6d8a]">
+                        <div class="bg-[#f5f8ff] border border-[#e0e8f5] rounded-xl p-3 flex items-center gap-2">
+                            <i class="fas fa-passport text-[#5b8dce]"></i> 護照、機票（電子）、訂位代號 EUOPZV
+                        </div>
+                        <div class="bg-[#f5f8ff] border border-[#e0e8f5] rounded-xl p-3 flex items-center gap-2">
+                            <i class="fas fa-receipt text-[#5b8dce]"></i> 退稅物品放隨身行李（未拆封），到機場海關蓋章
+                        </div>
+                        <div class="bg-[#f5f8ff] border border-[#e0e8f5] rounded-xl p-3 flex items-center gap-2">
+                            <i class="fas fa-ticket-alt text-[#5b8dce]"></i> Skyliner 車票（昨天已買好！）
+                        </div>
+                        <div class="bg-[#f5f8ff] border border-[#e0e8f5] rounded-xl p-3 flex items-center gap-2">
+                            <i class="fas fa-suitcase text-[#5b8dce]"></i> 液體、行動電源放正確的行李中
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D11 Route Summary -->
+            <div class="card border border-[#d4dff0] shadow-sm">
+                <div class="card-content p-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#e0e8f5] flex items-center justify-center text-[#5b8dce]">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#3a4a6b]">今日動線</h3>
+                    </div>
+                    <div class="bg-[#f5f8ff] border border-[#e0e8f5] rounded-2xl p-4">
+                        <p class="text-sm text-[#5a6d8a] leading-relaxed">
+                            <i class="fas fa-hotel text-[#5b8dce]"></i> MIMARU 上野
+                            <i class="fas fa-arrow-right text-xs text-[#7b8fad] mx-1"></i>
+                            <i class="fas fa-walking text-[#d4a03c]"></i> 步行 8 分
+                            <i class="fas fa-arrow-right text-xs text-[#7b8fad] mx-1"></i>
+                            <i class="fas fa-train text-[#5b8dce]"></i> 京成上野
+                            <i class="fas fa-arrow-right text-xs text-[#7b8fad] mx-1"></i>
+                            <span class="inline-block mt-1">
+                            <i class="fas fa-bolt text-[#d4a03c]"></i> Skyliner 41 分
+                            <i class="fas fa-arrow-right text-xs text-[#7b8fad] mx-1"></i>
+                            <i class="fas fa-plane-departure text-[#e05a5a]"></i> 成田 NRT
+                            <i class="fas fa-arrow-right text-xs text-[#7b8fad] mx-1"></i>
+                            <i class="fas fa-plane-arrival text-[#5b8dce]"></i> 桃園 TPE
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
