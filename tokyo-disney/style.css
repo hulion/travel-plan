@@ -462,22 +462,30 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     .section-title { max-width: 28rem; margin-left: auto; margin-right: auto; }
     .feature-card { max-width: 28rem; margin-left: auto; margin-right: auto; }
 
-    .card:has(#ikspiari-lunch) {
+    .card:has(#ikspiari-lunch),
+    .card:has(#d5-lunch),
+    .card:has(#d5-dinner) {
         max-width: 1300px;
         width: auto;
         margin-left: auto;
         margin-right: auto;
     }
-    .card:has(#ikspiari-lunch) .card-content {
+    .card:has(#ikspiari-lunch) .card-content,
+    .card:has(#d5-lunch) .card-content,
+    .card:has(#d5-dinner) .card-content {
         padding-left: 0;
         padding-right: 0;
     }
-    .card:has(#ikspiari-lunch) .card-content > div:first-child {
+    .card:has(#ikspiari-lunch) .card-content > div:first-child,
+    .card:has(#d5-lunch) .card-content > div:first-child,
+    .card:has(#d5-dinner) .card-content > div:first-child {
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    #ikspiari-lunch {
+    #ikspiari-lunch,
+    #d5-lunch,
+    #d5-dinner {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
@@ -487,26 +495,34 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
         box-sizing: border-box;
     }
 
-    #ikspiari-lunch .rec-item {
+    #ikspiari-lunch .rec-item,
+    #d5-lunch .rec-item,
+    #d5-dinner .rec-item {
         flex-direction: column;
         margin-bottom: 0;
         height: 100%;
     }
 
-    #ikspiari-lunch .rec-img {
+    #ikspiari-lunch .rec-img,
+    #d5-lunch .rec-img,
+    #d5-dinner .rec-img {
         width: 100%;
         height: 200px;
         border-radius: 12px;
         margin-bottom: 0;
     }
 
-    #ikspiari-lunch .rec-content {
+    #ikspiari-lunch .rec-content,
+    #d5-lunch .rec-content,
+    #d5-dinner .rec-content {
         flex: 1;
         margin: 0;
         padding: 0;
     }
 
-    #ikspiari-lunch .nav-icon-btn {
+    #ikspiari-lunch .nav-icon-btn,
+    #d5-lunch .nav-icon-btn,
+    #d5-dinner .nav-icon-btn {
         width: 100%;
         height: auto;
         padding: 12px 20px;
@@ -517,7 +533,9 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
         font-weight: 600;
     }
 
-    #ikspiari-lunch .nav-icon-btn::after {
+    #ikspiari-lunch .nav-icon-btn::after,
+    #d5-lunch .nav-icon-btn::after,
+    #d5-dinner .nav-icon-btn::after {
         content: 'Google Map 導航';
     }
 }
