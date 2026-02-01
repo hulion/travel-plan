@@ -481,7 +481,9 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     .card:has(#ikspiari-lunch),
     .card:has(#d5-lunch),
     .card:has(#d5-dinner),
-    .card:has(#d7-dinner) {
+    .card:has(#d7-dinner),
+    .card:has(#d8-lunch),
+    .card:has(#d8-dinner) {
         max-width: 1300px;
         width: auto;
         margin-left: auto;
@@ -490,14 +492,18 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     .card:has(#ikspiari-lunch) .card-content,
     .card:has(#d5-lunch) .card-content,
     .card:has(#d5-dinner) .card-content,
-    .card:has(#d7-dinner) .card-content {
+    .card:has(#d7-dinner) .card-content,
+    .card:has(#d8-lunch) .card-content,
+    .card:has(#d8-dinner) .card-content {
         padding-left: 0;
         padding-right: 0;
     }
     .card:has(#ikspiari-lunch) .card-content > div:first-child,
     .card:has(#d5-lunch) .card-content > div:first-child,
     .card:has(#d5-dinner) .card-content > div:first-child,
-    .card:has(#d7-dinner) .card-content > div:first-child {
+    .card:has(#d7-dinner) .card-content > div:first-child,
+    .card:has(#d8-lunch) .card-content > div:first-child,
+    .card:has(#d8-dinner) .card-content > div:first-child {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -505,7 +511,9 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     #ikspiari-lunch,
     #d5-lunch,
     #d5-dinner,
-    #d7-dinner {
+    #d7-dinner,
+    #d8-lunch,
+    #d8-dinner {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
@@ -518,7 +526,9 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     #ikspiari-lunch .rec-item,
     #d5-lunch .rec-item,
     #d5-dinner .rec-item,
-    #d7-dinner .rec-item {
+    #d7-dinner .rec-item,
+    #d8-lunch .rec-item,
+    #d8-dinner .rec-item {
         flex-direction: column;
         margin-bottom: 0;
         height: 100%;
@@ -527,7 +537,9 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     #ikspiari-lunch .rec-img,
     #d5-lunch .rec-img,
     #d5-dinner .rec-img,
-    #d7-dinner .rec-img {
+    #d7-dinner .rec-img,
+    #d8-lunch .rec-img,
+    #d8-dinner .rec-img {
         width: 100%;
         height: 200px;
         border-radius: 12px;
@@ -537,7 +549,9 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     #ikspiari-lunch .rec-content,
     #d5-lunch .rec-content,
     #d5-dinner .rec-content,
-    #d7-dinner .rec-content {
+    #d7-dinner .rec-content,
+    #d8-lunch .rec-content,
+    #d8-dinner .rec-content {
         flex: 1;
         margin: 0;
         padding: 0;
@@ -546,7 +560,9 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     #ikspiari-lunch .nav-icon-btn,
     #d5-lunch .nav-icon-btn,
     #d5-dinner .nav-icon-btn,
-    #d7-dinner .nav-icon-btn {
+    #d7-dinner .nav-icon-btn,
+    #d8-lunch .nav-icon-btn,
+    #d8-dinner .nav-icon-btn {
         width: 100%;
         height: auto;
         padding: 12px 20px;
@@ -560,7 +576,9 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     #ikspiari-lunch .nav-icon-btn::after,
     #d5-lunch .nav-icon-btn::after,
     #d5-dinner .nav-icon-btn::after,
-    #d7-dinner .nav-icon-btn::after {
+    #d7-dinner .nav-icon-btn::after,
+    #d8-lunch .nav-icon-btn::after,
+    #d8-dinner .nav-icon-btn::after {
         content: 'Google Map 導航';
     }
 }
