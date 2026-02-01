@@ -608,4 +608,12 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-cream
     #d10-dinner .nav-icon-btn::after {
         content: 'Google Map 導航';
     }
+
+    /* 手機版取消按下縮放動態，方便長按複製文字 */
+    .card:active { transform: none; }
+    .nav-icon-btn:active { transform: none; }
+    .random-pick-btn:active { transform: none; }
+    .day-tab-btn:active { transform: none; }
+    .back-to-top:active { transform: none; }
+    .rec-item:active { transform: none; }
 }
