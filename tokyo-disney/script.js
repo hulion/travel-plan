@@ -100,12 +100,13 @@ function updateActiveDay(dayId) {
 }
 
 // Scroll Spy
+let scrollSpyPaused = false;
 function initScrollSpy() {
     const days = ['day1', 'day2', 'day3', 'day4', 'day5', 'day6', 'day7', 'day8', 'day9', 'day10', 'day11'];
     let isScrolling = false;
 
     window.addEventListener('scroll', () => {
-        if (isScrolling) return;
+        if (isScrolling || scrollSpyPaused) return;
         isScrolling = true;
         setTimeout(() => { isScrolling = false; }, 100);
 
@@ -156,8 +157,10 @@ function initScrollAnimation() {
 
 // Back to Top
 function scrollToTop() {
+    scrollSpyPaused = true;
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => { updateActiveDay('day1'); }, 500);
+    updateActiveDay('day1');
+    setTimeout(() => { scrollSpyPaused = false; }, 1000);
 }
 
 function initBackToTop() {
