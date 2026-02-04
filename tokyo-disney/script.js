@@ -95,27 +95,34 @@ function updateActiveDay(dayId) {
     const activeButton = document.querySelector(`button[onclick*="${dayId}"]`);
     if (activeButton) {
         activeButton.classList.add('active');
+        activeButton.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
 }
 
 // Scroll Spy
+let scrollSpyPaused = false;
 function initScrollSpy() {
-    const days = ['day1', 'day2', 'day3', 'day4', 'day5', 'day6', 'day7', 'day8', 'day9', 'day10'];
+    const days = ['day1', 'day2', 'day3', 'day4', 'day5', 'day6', 'day7', 'day8', 'day9', 'day10', 'day11'];
     let isScrolling = false;
 
     window.addEventListener('scroll', () => {
-        if (isScrolling) return;
+        if (isScrolling || scrollSpyPaused) return;
         isScrolling = true;
         setTimeout(() => { isScrolling = false; }, 100);
 
         let currentDay = null;
         const scrollPosition = window.scrollY + 200;
+        const atBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 100);
 
-        for (let i = days.length - 1; i >= 0; i--) {
-            const element = document.getElementById(days[i]);
-            if (element && element.offsetTop <= scrollPosition) {
-                currentDay = days[i];
-                break;
+        if (atBottom) {
+            currentDay = days[days.length - 1];
+        } else {
+            for (let i = days.length - 1; i >= 0; i--) {
+                const element = document.getElementById(days[i]);
+                if (element && element.offsetTop <= scrollPosition) {
+                    currentDay = days[i];
+                    break;
+                }
             }
         }
 
@@ -150,8 +157,10 @@ function initScrollAnimation() {
 
 // Back to Top
 function scrollToTop() {
+    scrollSpyPaused = true;
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => { updateActiveDay('day1'); }, 500);
+    updateActiveDay('day1');
+    setTimeout(() => { scrollSpyPaused = false; }, 1000);
 }
 
 function initBackToTop() {
